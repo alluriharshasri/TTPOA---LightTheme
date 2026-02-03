@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
+import AntigravityBg from '../components/AntigravityBg.astro';
 import Footer from '../components/Footer.astro';
 
 const teamMembers = [
@@ -48,20 +49,21 @@ const teamMembers = [
 ---
 
 <Layout title="Association Members - TTPOA">
+  <AntigravityBg />
   <Navbar currentPage="members" />
   
   <main class="pt-16 lg:pt-20">
     <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-blue-50 to-white py-20">
+    <section class="bg-gradient-to-br from-blue-50/30 via-transparent to-orange-50/30 backdrop-blur-sm py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-3xl mx-auto">
           <span class="fade-up inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
             Our Team
           </span>
-          <h1 class="fade-up delay-100 text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+          <h1 class="fade-up delay-100 text-4xl md:text-5xl font-bold text-white mb-6">
             Association <span class="gradient-text">Members</span>
           </h1>
-          <p class="fade-up delay-200 text-lg text-slate-600 leading-relaxed">
+          <p class="fade-up delay-200 text-lg text-white/90 leading-relaxed">
             Meet the dedicated professionals driving TTPOA's mission to bridge the gap between academia and industry.
           </p>
         </div>
@@ -69,13 +71,13 @@ const teamMembers = [
     </section>
 
     <!-- Leadership Team -->
-    <section class="section-padding bg-white">
+    <section class="section-padding bg-white/5 backdrop-blur-sm">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <span class="fade-up inline-block bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
             Leadership
           </span>
-          <h2 class="fade-up delay-100 text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          <h2 class="fade-up delay-100 text-3xl md:text-4xl font-bold text-white mb-4">
             Executive Committee
           </h2>
         </div>
@@ -96,16 +98,16 @@ const teamMembers = [
     </section>
 
     <!-- Member Colleges Section -->
-    <section class="section-padding bg-gradient-to-b from-slate-50 to-white">
+    <section class="section-padding bg-gradient-to-b from-slate-50/20 to-transparent backdrop-blur-sm">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <span class="fade-up inline-block bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
             Our Network
           </span>
-          <h2 class="fade-up delay-100 text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          <h2 class="fade-up delay-100 text-3xl md:text-4xl font-bold text-white mb-4">
             Member Institutions
           </h2>
-          <p class="fade-up delay-200 text-slate-600 max-w-2xl mx-auto">
+          <p class="fade-up delay-200 text-white/90 max-w-2xl mx-auto">
             TTPOA represents over 500+ colleges and universities across Telangana State
           </p>
         </div>
@@ -126,46 +128,52 @@ const teamMembers = [
     </section>
 
     <!-- Stats -->
-    <section class="section-padding bg-white">
+    <section class="section-padding">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid md:grid-cols-4 gap-8 text-center">
-          <div class="fade-up delay-100 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-2xl p-8">
-            <div class="text-4xl font-bold mb-2">500+</div>
-            <p class="text-blue-100">Member Colleges</p>
+          <div class="fade-up delay-100 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-2xl p-8 shadow-xl hover:bg-white/15 transition-all">
+            <div class="text-4xl font-bold mb-2 counter" data-target="500">0</div>
+            <p class="text-white/90 font-semibold">Member Colleges</p>
           </div>
-          <div class="fade-up delay-200 bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-2xl p-8">
-            <div class="text-4xl font-bold mb-2">200+</div>
-            <p class="text-purple-100">Partner Companies</p>
+          <div class="fade-up delay-200 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-2xl p-8 shadow-xl hover:bg-white/15 transition-all">
+            <div class="text-4xl font-bold mb-2 counter" data-target="200">0</div>
+            <p class="text-white/90 font-semibold">Partner Companies</p>
           </div>
-          <div class="fade-up delay-300 bg-gradient-to-br from-green-500 to-green-600 text-white rounded-2xl p-8">
-            <div class="text-4xl font-bold mb-2">1000+</div>
-            <p class="text-green-100">Active TPOs</p>
+          <div class="fade-up delay-300 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-2xl p-8 shadow-xl hover:bg-white/15 transition-all">
+            <div class="text-4xl font-bold mb-2 counter" data-target="1000">0</div>
+            <p class="text-white/90 font-semibold">Active TPOs</p>
           </div>
-          <div class="fade-up delay-400 bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-2xl p-8">
-            <div class="text-4xl font-bold mb-2">10+</div>
-            <p class="text-orange-100">Years of Service</p>
+          <div class="fade-up delay-400 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-2xl p-8 shadow-xl hover:bg-white/15 transition-all">
+            <div class="text-4xl font-bold mb-2 counter" data-target="10">0</div>
+            <p class="text-white/90 font-semibold">Years of Service</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Join Section -->
-    <section class="section-padding bg-gradient-to-r from-blue-600 to-blue-800 text-white">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="fade-up text-3xl md:text-4xl font-bold mb-6">Become a Member</h2>
-        <p class="fade-up delay-100 text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-          Join TTPOA and become part of Telangana's largest network of Training & Placement professionals.
-        </p>
-        <div class="fade-up delay-200 flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="https://ttpoa.org.in/index.php/Tpo_auth/register" class="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:bg-blue-50 transition-colors">
-            Register as TPO
-            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-          </a>
-          <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-xl hover:bg-white/10 transition-colors">
-            Contact Us
-          </a>
+    <section class="section-padding">
+      <div class="max-w-7xl mx-auto px-1 sm:px-1.5 lg:px-2">
+        <div class="bg-gradient-to-br from-blue-600 via-blue-700 to-purple-700 rounded-3xl p-12 shadow-2xl text-center relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-64 h-64 bg-orange-500/20 rounded-full blur-3xl"></div>
+          <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl"></div>
+          <div class="relative z-10">
+            <h2 class="fade-up text-3xl md:text-4xl font-bold mb-6 text-white">Become a Member</h2>
+            <p class="fade-up delay-100 text-white/95 text-lg mb-8 max-w-2xl mx-auto">
+              Join TTPOA and become part of Telangana's largest network of Training & Placement professionals.
+            </p>
+            <div class="fade-up delay-200 flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="https://ttpoa.org.in/index.php/Tpo_auth/register" class="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl hover:scale-105">
+                Register as TPO
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </a>
+              <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-xl hover:bg-white/10 transition-all hover:scale-105">
+                Contact Us
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

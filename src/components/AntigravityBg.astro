@@ -1,0 +1,342 @@
+---
+// Antigravity-style animated background with floating particles and cursor interaction
+---
+
+<div class="antigravity-bg" id="antigravity-bg">
+  <div class="particles-container" id="particles-container">
+    {Array.from({ length: 200 }).map((_, i) => (
+      <div class={`particle particle-${i + 1}`} data-particle={i}></div>
+    ))}
+  </div>
+  <div class="gradient-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+    <div class="orb orb-5"></div>
+  </div>
+  <canvas id="particle-canvas"></canvas>
+</div>
+
+<script>
+  // Cursor interaction with particles
+  const container = document.getElementById('antigravity-bg');
+  const particles = document.querySelectorAll('.particle');
+  const orbs = document.querySelectorAll('.orb');
+  let mouseX = 0;
+  let mouseY = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    particles.forEach((particle) => {
+      const rect = particle.getBoundingClientRect();
+      const particleX = rect.left + rect.width / 2;
+      const particleY = rect.top + rect.height / 2;
+
+      const distX = mouseX - particleX;
+      const distY = mouseY - particleY;
+      const distance = Math.sqrt(distX * distX + distY * distY);
+
+      // Repulsion radius
+      const repulsionRadius = 150;
+
+      if (distance < repulsionRadius) {
+        const force = (repulsionRadius - distance) / repulsionRadius;
+        const moveX = -distX * force * 0.5;
+        const moveY = -distY * force * 0.5;
+
+        particle.style.transform = `translate(${moveX}px, ${moveY}px) scale(${1 + force * 0.3})`;
+        particle.style.opacity = `${0.6 + force * 0.4}`;
+      } else {
+        particle.style.transform = 'translate(0, 0) scale(1)';
+        particle.style.opacity = '';
+      }
+    });
+
+    // Orb cursor interaction
+    orbs.forEach((orb) => {
+      const rect = orb.getBoundingClientRect();
+      const orbX = rect.left + rect.width / 2;
+      const orbY = rect.top + rect.height / 2;
+
+      const distX = mouseX - orbX;
+      const distY = mouseY - orbY;
+      const distance = Math.sqrt(distX * distX + distY * distY);
+
+      const repulsionRadius = 300;
+
+      if (distance < repulsionRadius) {
+        const force = (repulsionRadius - distance) / repulsionRadius;
+        const moveX = -distX * force * 0.2;
+        const moveY = -distY * force * 0.2;
+
+        orb.style.transform = `translate(${moveX}px, ${moveY}px) scale(${1 + force * 0.1})`;
+      } else {
+        orb.style.transform = '';
+      }
+    });
+  });
+
+  // Reset on mouse leave
+  document.addEventListener('mouseleave', () => {
+    particles.forEach((particle) => {
+      particle.style.transform = '';
+      particle.style.opacity = '';
+    });
+    orbs.forEach((orb) => {
+      orb.style.transform = '';
+    });
+  });
+</script>
+
+<style>
+  .antigravity-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #1e40af 100%);
+  }
+
+  .particles-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .particle {
+    position: absolute;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(249,115,22,0.4) 50%, transparent 100%);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    animation: float-up 15s infinite ease-in-out;
+    transition: transform 0.3s ease-out, opacity 0.2s ease-out;
+    will-change: transform, opacity;
+  }
+
+  /* Different particle sizes and positions - 50 particles */
+  .particle-1 { width: 4px; height: 4px; left: 5%; animation-delay: 0s; }
+  .particle-2 { width: 6px; height: 6px; left: 10%; animation-delay: 2s; }
+  .particle-3 { width: 3px; height: 3px; left: 15%; animation-delay: 4s; }
+  .particle-4 { width: 5px; height: 5px; left: 20%; animation-delay: 1s; }
+  .particle-5 { width: 4px; height: 4px; left: 25%; animation-delay: 3s; }
+  .particle-6 { width: 7px; height: 7px; left: 30%; animation-delay: 5s; }
+  .particle-7 { width: 3px; height: 3px; left: 35%; animation-delay: 2.5s; }
+  .particle-8 { width: 5px; height: 5px; left: 40%; animation-delay: 4.5s; }
+  .particle-9 { width: 4px; height: 4px; left: 45%; animation-delay: 1.5s; }
+  .particle-10 { width: 6px; height: 6px; left: 50%; animation-delay: 3.5s; }
+  .particle-11 { width: 3px; height: 3px; left: 55%; animation-delay: 0.5s; }
+  .particle-12 { width: 5px; height: 5px; left: 60%; animation-delay: 2.8s; }
+  .particle-13 { width: 4px; height: 4px; left: 65%; animation-delay: 4.2s; }
+  .particle-14 { width: 7px; height: 7px; left: 70%; animation-delay: 1.8s; }
+  .particle-15 { width: 3px; height: 3px; left: 75%; animation-delay: 3.2s; }
+  .particle-16 { width: 5px; height: 5px; left: 80%; animation-delay: 5.5s; }
+  .particle-17 { width: 4px; height: 4px; left: 85%; animation-delay: 2.2s; }
+  .particle-18 { width: 6px; height: 6px; left: 90%; animation-delay: 4.8s; }
+  .particle-19 { width: 5px; height: 5px; left: 95%; animation-delay: 1.2s; }
+  .particle-20 { width: 4px; height: 4px; left: 8%; animation-delay: 3.8s; }
+  .particle-21 { width: 6px; height: 6px; left: 12%; animation-delay: 0.8s; }
+  .particle-22 { width: 3px; height: 3px; left: 18%; animation-delay: 2.3s; }
+  .particle-23 { width: 5px; height: 5px; left: 22%; animation-delay: 4.7s; }
+  .particle-24 { width: 4px; height: 4px; left: 28%; animation-delay: 1.3s; }
+  .particle-25 { width: 7px; height: 7px; left: 32%; animation-delay: 3.6s; }
+  .particle-26 { width: 3px; height: 3px; left: 38%; animation-delay: 5.2s; }
+  .particle-27 { width: 5px; height: 5px; left: 42%; animation-delay: 2.1s; }
+  .particle-28 { width: 4px; height: 4px; left: 48%; animation-delay: 4.4s; }
+  .particle-29 { width: 6px; height: 6px; left: 52%; animation-delay: 1.6s; }
+  .particle-30 { width: 3px; height: 3px; left: 58%; animation-delay: 3.4s; }
+  .particle-31 { width: 5px; height: 5px; left: 62%; animation-delay: 5.8s; }
+  .particle-32 { width: 4px; height: 4px; left: 68%; animation-delay: 2.6s; }
+  .particle-33 { width: 7px; height: 7px; left: 72%; animation-delay: 4.1s; }
+  .particle-34 { width: 3px; height: 3px; left: 78%; animation-delay: 1.9s; }
+  .particle-35 { width: 5px; height: 5px; left: 82%; animation-delay: 3.3s; }
+  .particle-36 { width: 4px; height: 4px; left: 88%; animation-delay: 5.6s; }
+  .particle-37 { width: 6px; height: 6px; left: 92%; animation-delay: 2.4s; }
+  .particle-38 { width: 3px; height: 3px; left: 97%; animation-delay: 4.9s; }
+  .particle-39 { width: 5px; height: 5px; left: 3%; animation-delay: 1.1s; }
+  .particle-40 { width: 4px; height: 4px; left: 7%; animation-delay: 3.7s; }
+  .particle-41 { width: 6px; height: 6px; left: 13%; animation-delay: 0.9s; }
+  .particle-42 { width: 3px; height: 3px; left: 17%; animation-delay: 2.7s; }
+  .particle-43 { width: 5px; height: 5px; left: 23%; animation-delay: 4.3s; }
+  .particle-44 { width: 4px; height: 4px; left: 27%; animation-delay: 1.4s; }
+  .particle-45 { width: 7px; height: 7px; left: 33%; animation-delay: 3.9s; }
+  .particle-46 { width: 3px; height: 3px; left: 37%; animation-delay: 5.3s; }
+  .particle-47 { width: 5px; height: 5px; left: 43%; animation-delay: 2.9s; }
+  .particle-48 { width: 4px; height: 4px; left: 47%; animation-delay: 4.6s; }
+  .particle-49 { width: 6px; height: 6px; left: 53%; animation-delay: 1.7s; }
+  .particle-50 { width: 5px; height: 5px; left: 57%; animation-delay: 3.1s; }
+  .particle-51 { width: 4px; height: 4px; left: 6%; animation-delay: 0.3s; }
+  .particle-52 { width: 6px; height: 6px; left: 11%; animation-delay: 2.4s; }
+  .particle-53 { width: 3px; height: 3px; left: 16%; animation-delay: 4.1s; }
+  .particle-54 { width: 5px; height: 5px; left: 21%; animation-delay: 1.7s; }
+  .particle-55 { width: 4px; height: 4px; left: 26%; animation-delay: 3.3s; }
+  .particle-56 { width: 7px; height: 7px; left: 31%; animation-delay: 5.1s; }
+  .particle-57 { width: 3px; height: 3px; left: 36%; animation-delay: 2.6s; }
+  .particle-58 { width: 5px; height: 5px; left: 41%; animation-delay: 4.3s; }
+  .particle-59 { width: 4px; height: 4px; left: 46%; animation-delay: 1.4s; }
+  .particle-60 { width: 6px; height: 6px; left: 51%; animation-delay: 3.7s; }
+  .particle-61 { width: 3px; height: 3px; left: 56%; animation-delay: 5.4s; }
+  .particle-62 { width: 5px; height: 5px; left: 61%; animation-delay: 2.2s; }
+  .particle-63 { width: 4px; height: 4px; left: 66%; animation-delay: 4.5s; }
+  .particle-64 { width: 7px; height: 7px; left: 71%; animation-delay: 1.8s; }
+  .particle-65 { width: 3px; height: 3px; left: 76%; animation-delay: 3.5s; }
+  .particle-66 { width: 5px; height: 5px; left: 81%; animation-delay: 5.7s; }
+  .particle-67 { width: 4px; height: 4px; left: 86%; animation-delay: 2.5s; }
+  .particle-68 { width: 6px; height: 6px; left: 91%; animation-delay: 4.2s; }
+  .particle-69 { width: 3px; height: 3px; left: 96%; animation-delay: 1.9s; }
+  .particle-70 { width: 5px; height: 5px; left: 4%; animation-delay: 3.6s; }
+  .particle-71 { width: 4px; height: 4px; left: 9%; animation-delay: 0.7s; }
+  .particle-72 { width: 6px; height: 6px; left: 14%; animation-delay: 2.9s; }
+  .particle-73 { width: 3px; height: 3px; left: 19%; animation-delay: 4.8s; }
+  .particle-74 { width: 5px; height: 5px; left: 24%; animation-delay: 1.5s; }
+  .particle-75 { width: 4px; height: 4px; left: 29%; animation-delay: 3.8s; }
+  .particle-76 { width: 7px; height: 7px; left: 34%; animation-delay: 5.9s; }
+  .particle-77 { width: 3px; height: 3px; left: 39%; animation-delay: 2.3s; }
+  .particle-78 { width: 5px; height: 5px; left: 44%; animation-delay: 4.4s; }
+  .particle-79 { width: 4px; height: 4px; left: 49%; animation-delay: 1.6s; }
+  .particle-80 { width: 6px; height: 6px; left: 54%; animation-delay: 3.9s; }
+  .particle-81 { width: 3px; height: 3px; left: 59%; animation-delay: 5.6s; }
+  .particle-82 { width: 5px; height: 5px; left: 64%; animation-delay: 2.7s; }
+  .particle-83 { width: 4px; height: 4px; left: 69%; animation-delay: 4.9s; }
+  .particle-84 { width: 7px; height: 7px; left: 74%; animation-delay: 1.3s; }
+  .particle-85 { width: 3px; height: 3px; left: 79%; animation-delay: 3.4s; }
+  .particle-86 { width: 5px; height: 5px; left: 84%; animation-delay: 5.2s; }
+  .particle-87 { width: 4px; height: 4px; left: 89%; animation-delay: 2.8s; }
+  .particle-88 { width: 6px; height: 6px; left: 94%; animation-delay: 4.7s; }
+  .particle-89 { width: 3px; height: 3px; left: 2%; animation-delay: 1.2s; }
+  .particle-90 { width: 5px; height: 5px; left: 8%; animation-delay: 3.2s; }
+  .particle-91 { width: 4px; height: 4px; left: 1%; animation-delay: 0.4s; }
+  .particle-92 { width: 6px; height: 6px; left: 99%; animation-delay: 2.1s; }
+  .particle-93 { width: 3px; height: 3px; left: 63%; animation-delay: 4.0s; }
+  .particle-94 { width: 5px; height: 5px; left: 67%; animation-delay: 1.0s; }
+  .particle-95 { width: 4px; height: 4px; left: 73%; animation-delay: 3.0s; }
+  .particle-96 { width: 7px; height: 7px; left: 77%; animation-delay: 5.0s; }
+  .particle-97 { width: 3px; height: 3px; left: 83%; animation-delay: 2.0s; }
+  .particle-98 { width: 5px; height: 5px; left: 87%; animation-delay: 4.0s; }
+  .particle-99 { width: 4px; height: 4px; left: 93%; animation-delay: 1.1s; }
+  .particle-100 { width: 6px; height: 6px; left: 98%; animation-delay: 3.5s; }
+
+  @keyframes float-up {
+    0% {
+      transform: translateY(100vh) translateX(0) scale(0);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 0.8;
+      transform: translateY(50vh) translateX(20px) scale(1);
+    }
+    90% {
+      opacity: 0.3;
+    }
+    100% {
+      transform: translateY(-20vh) translateX(-20px) scale(0.5);
+      opacity: 0;
+    }
+  }
+
+  .gradient-orbs {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.3;
+    animation: float-orb 20s infinite ease-in-out;
+    transition: transform 0.5s ease-out;
+    will-change: transform;
+  }
+
+  .orb-1 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #3b82f6 0%, transparent 70%);
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+  }
+
+  .orb-2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #f97316 0%, transparent 70%);
+    top: 60%;
+    right: 10%;
+    animation-delay: 7s;
+  }
+
+  .orb-3 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, #8b5cf6 0%, transparent 70%);
+    bottom: 10%;
+    left: 50%;
+    animation-delay: 14s;
+  }
+
+  .orb-4 {
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, #06b6d4 0%, transparent 70%);
+    top: 40%;
+    right: 30%;
+    animation-delay: 4s;
+  }
+
+  .orb-5 {
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, #ec4899 0%, transparent 70%);
+    bottom: 30%;
+    left: 20%;
+    animation-delay: 10s;
+  }
+
+  @keyframes float-orb {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(50px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-50px, 50px) scale(0.9);
+    }
+  }
+
+  /* Add some grid lines for depth effect */
+  .antigravity-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: grid-move 20s linear infinite;
+  }
+
+  @keyframes grid-move {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(50px);
+    }
+  }
+</style>

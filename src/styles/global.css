@@ -13,43 +13,11 @@
 
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: #0f172a;
+    background: transparent;
     min-height: 100vh;
     overflow-x: hidden;
     color: #1e293b;
     position: relative;
-  }
-
-  /* Professional Gradient Background */
-  body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 25%, #3b82f6 50%, #f97316 75%, #ea580c 100%);
-    background-size: 400% 400%;
-    z-index: -3;
-    animation: gradientFlow 20s ease infinite;
-  }
-
-  /* Antigravity Floating Particles */
-  body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image:
-      radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(249, 115, 22, 0.15) 0%, transparent 50%),
-      radial-gradient(circle at 40% 40%, rgba(59, 130, 246, 0.1) 0%, transparent 40%),
-      radial-gradient(circle at 60% 70%, rgba(249, 115, 22, 0.1) 0%, transparent 40%),
-      radial-gradient(circle at 90% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 30%);
-    z-index: -2;
-    animation: antigravity 25s ease-in-out infinite;
   }
 }
 
@@ -385,6 +353,23 @@
 
 .animate-ticker {
   animation: ticker 60s linear infinite;
+}
+
+.animate-ticker-reverse {
+  animation: ticker-reverse 60s linear infinite;
+}
+
+.hover\:animation-paused:hover {
+  animation-play-state: paused;
+}
+
+@keyframes ticker-reverse {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(50%);
+  }
 }
 
 /* Pulse Effect */
