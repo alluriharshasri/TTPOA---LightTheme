@@ -7,13 +7,14 @@ interface Props {
 }
 
 const { currentPage = 'home' } = Astro.props;
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <nav class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300" id="navbar">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16 lg:h-20">
       <!-- Logo -->
-      <a href="/" class="flex items-center space-x-3 group">
+      <a href={baseUrl} class="flex items-center space-x-3 group">
         <div class="w-10 h-10 lg:w-12 lg:h-12 rounded-xl overflow-hidden border-2 border-orange-400 group-hover:border-orange-500 transition-all shadow-lg">
           <Image src={logo} alt="TTPOA Logo" class="w-full h-full object-cover" />
         </div>
@@ -25,11 +26,11 @@ const { currentPage = 'home' } = Astro.props;
 
       <!-- Desktop Menu -->
       <div class="hidden lg:flex items-center gap-2">
-        <a href="/" class={`px-5 py-2.5 rounded-lg font-medium transition-all ${currentPage === 'home' ? 'text-white bg-white/20' : 'text-white/90 hover:text-white hover:bg-white/10'}`}>Home</a>
-        <a href="/about" class={`px-5 py-2.5 rounded-lg font-medium transition-all ${currentPage === 'about' ? 'text-white bg-white/20' : 'text-white/90 hover:text-white hover:bg-white/10'}`}>About</a>
-        <a href="/services" class={`px-5 py-2.5 rounded-lg font-medium transition-all ${currentPage === 'services' ? 'text-white bg-white/20' : 'text-white/90 hover:text-white hover:bg-white/10'}`}>Services</a>
-        <a href="/members" class={`px-5 py-2.5 rounded-lg font-medium transition-all ${currentPage === 'members' ? 'text-white bg-white/20' : 'text-white/90 hover:text-white hover:bg-white/10'}`}>Members</a>
-        <a href="/contact" class={`px-5 py-2.5 rounded-lg font-medium transition-all ${currentPage === 'contact' ? 'text-white bg-white/20' : 'text-white/90 hover:text-white hover:bg-white/10'}`}>Contact</a>
+        <a href={baseUrl} class={`px-5 py-2.5 rounded-lg font-medium transition-all ${currentPage === 'home' ? 'text-white bg-white/20' : 'text-white/90 hover:text-white hover:bg-white/10'}`}>Home</a>
+        <a href={`${baseUrl}about`} class={`px-5 py-2.5 rounded-lg font-medium transition-all ${currentPage === 'about' ? 'text-white bg-white/20' : 'text-white/90 hover:text-white hover:bg-white/10'}`}>About</a>
+        <a href={`${baseUrl}services`} class={`px-5 py-2.5 rounded-lg font-medium transition-all ${currentPage === 'services' ? 'text-white bg-white/20' : 'text-white/90 hover:text-white hover:bg-white/10'}`}>Services</a>
+        <a href={`${baseUrl}members`} class={`px-5 py-2.5 rounded-lg font-medium transition-all ${currentPage === 'members' ? 'text-white bg-white/20' : 'text-white/90 hover:text-white hover:bg-white/10'}`}>Members</a>
+        <a href={`${baseUrl}contact`} class={`px-5 py-2.5 rounded-lg font-medium transition-all ${currentPage === 'contact' ? 'text-white bg-white/20' : 'text-white/90 hover:text-white hover:bg-white/10'}`}>Contact</a>
       </div>
 
       <!-- Login Dropdown -->
@@ -93,11 +94,11 @@ const { currentPage = 'home' } = Astro.props;
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="hidden lg:hidden bg-white/95 backdrop-blur-md border-t border-blue-200 shadow-2xl">
     <div class="px-4 py-4 space-y-1 max-h-[80vh] overflow-y-auto">
-      <a href="/" class={`block px-4 py-3 rounded-xl transition-colors ${currentPage === 'home' ? 'text-blue-700 bg-blue-50 font-medium' : 'text-gray-700 hover:bg-blue-50 hover:text-blue-700'}`}>Home</a>
-      <a href="/about" class={`block px-4 py-3 rounded-xl transition-colors ${currentPage === 'about' ? 'text-blue-700 bg-blue-50 font-medium' : 'text-gray-700 hover:bg-blue-50 hover:text-blue-700'}`}>About</a>
-      <a href="/services" class={`block px-4 py-3 rounded-xl transition-colors ${currentPage === 'services' ? 'text-blue-700 bg-blue-50 font-medium' : 'text-gray-700 hover:bg-blue-50 hover:text-blue-700'}`}>Services</a>
-      <a href="/members" class={`block px-4 py-3 rounded-xl transition-colors ${currentPage === 'members' ? 'text-blue-700 bg-blue-50 font-medium' : 'text-gray-700 hover:bg-blue-50 hover:text-blue-700'}`}>Members</a>
-      <a href="/contact" class={`block px-4 py-3 rounded-xl transition-colors ${currentPage === 'contact' ? 'text-blue-700 bg-blue-50 font-medium' : 'text-gray-700 hover:bg-blue-50 hover:text-blue-700'}`}>Contact</a>
+      <a href={baseUrl} class={`block px-4 py-3 rounded-xl transition-colors ${currentPage === 'home' ? 'text-blue-700 bg-blue-50 font-medium' : 'text-gray-700 hover:bg-blue-50 hover:text-blue-700'}`}>Home</a>
+      <a href={`${baseUrl}about`} class={`block px-4 py-3 rounded-xl transition-colors ${currentPage === 'about' ? 'text-blue-700 bg-blue-50 font-medium' : 'text-gray-700 hover:bg-blue-50 hover:text-blue-700'}`}>About</a>
+      <a href={`${baseUrl}services`} class={`block px-4 py-3 rounded-xl transition-colors ${currentPage === 'services' ? 'text-blue-700 bg-blue-50 font-medium' : 'text-gray-700 hover:bg-blue-50 hover:text-blue-700'}`}>Services</a>
+      <a href={`${baseUrl}members`} class={`block px-4 py-3 rounded-xl transition-colors ${currentPage === 'members' ? 'text-blue-700 bg-blue-50 font-medium' : 'text-gray-700 hover:bg-blue-50 hover:text-blue-700'}`}>Members</a>
+      <a href={`${baseUrl}contact`} class={`block px-4 py-3 rounded-xl transition-colors ${currentPage === 'contact' ? 'text-blue-700 bg-blue-50 font-medium' : 'text-gray-700 hover:bg-blue-50 hover:text-blue-700'}`}>Contact</a>
       
       <div class="border-t border-gray-200 pt-4 mt-4">
         <p class="text-xs text-gray-500 px-4 mb-3 uppercase tracking-wider font-medium">Login Options</p>

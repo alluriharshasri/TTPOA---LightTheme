@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import logo from '../assets/images/logo.jpg';
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <footer class="footer-bg mt-16">
@@ -46,9 +47,9 @@ import logo from '../assets/images/logo.jpg';
       <div>
         <h4 class="text-lg font-bold mb-6 text-white">TPO Activities</h4>
         <ul class="space-y-3">
-          <li><a href="/services" class="footer-link text-sm">Industry Academia Collaboration</a></li>
-          <li><a href="/services" class="footer-link text-sm">Placement Activities</a></li>
-          <li><a href="/services" class="footer-link text-sm">TPO's Upskilling</a></li>
+          <li><a href={`${baseUrl}services`} class="footer-link text-sm">Industry Academia Collaboration</a></li>
+          <li><a href={`${baseUrl}services`} class="footer-link text-sm">Placement Activities</a></li>
+          <li><a href={`${baseUrl}services`} class="footer-link text-sm">TPO's Upskilling</a></li>
         </ul>
       </div>
 
@@ -56,11 +57,11 @@ import logo from '../assets/images/logo.jpg';
       <div>
         <h4 class="text-lg font-bold mb-6 text-white">Student Activities</h4>
         <ul class="space-y-3">
-          <li><a href="/services" class="footer-link text-sm">Career Guidance</a></li>
-          <li><a href="/services" class="footer-link text-sm">Courses</a></li>
-          <li><a href="/services" class="footer-link text-sm">Internships</a></li>
-          <li><a href="/services" class="footer-link text-sm">Academic Projects</a></li>
-          <li><a href="/services" class="footer-link text-sm">Jobs</a></li>
+          <li><a href={`${baseUrl}services`} class="footer-link text-sm">Career Guidance</a></li>
+          <li><a href={`${baseUrl}services`} class="footer-link text-sm">Courses</a></li>
+          <li><a href={`${baseUrl}services`} class="footer-link text-sm">Internships</a></li>
+          <li><a href={`${baseUrl}services`} class="footer-link text-sm">Academic Projects</a></li>
+          <li><a href={`${baseUrl}services`} class="footer-link text-sm">Jobs</a></li>
         </ul>
       </div>
 
