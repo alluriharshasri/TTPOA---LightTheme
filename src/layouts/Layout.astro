@@ -1,0 +1,83 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "TTPOA - Telangana Training and Placement Officers Association. Connecting students, TPOs, and organizations for successful career pathways." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/jpeg" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body class="antialiased">
+    <slot />
+    
+    <script>
+      // Smooth scroll animation observer
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+          }
+        });
+      }, observerOptions);
+
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.fade-up, .fade-left, .fade-right, .scale-in').forEach(el => {
+          observer.observe(el);
+        });
+      });
+
+      // Counter animation
+      const animateCounters = () => {
+        document.querySelectorAll('.counter').forEach(counter => {
+          const target = parseInt(counter.getAttribute('data-target') || '0');
+          const duration = 2000;
+          const step = target / (duration / 16);
+          let current = 0;
+
+          const updateCounter = () => {
+            current += step;
+            if (current < target) {
+              counter.textContent = Math.floor(current).toLocaleString();
+              requestAnimationFrame(updateCounter);
+            } else {
+              counter.textContent = target.toLocaleString() + '+';
+            }
+          };
+
+          const counterObserver = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+              updateCounter();
+              counterObserver.disconnect();
+            }
+          });
+
+          counterObserver.observe(counter);
+        });
+      };
+
+      document.addEventListener('DOMContentLoaded', animateCounters);
+    </script>
+  </body>
+</html>

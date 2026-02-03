@@ -1,0 +1,347 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import NewsTicker from '../components/NewsTicker.astro';
+import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+import heroImage from '../assets/images/Image1.jpg';
+import image2 from '../assets/images/Image2.jpg';
+import image3 from '../assets/images/Image3.jpg';
+---
+
+<Layout title="TTPOA - Telangana Training and Placement Officers Association">
+  <Navbar currentPage="home" />
+  <NewsTicker />
+  
+  <main class="pt-32 lg:pt-36">
+    <!-- Hero Section -->
+    <section class="relative min-h-[85vh] flex items-center overflow-hidden">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 bg-pattern opacity-20"></div>
+      
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Left Content -->
+          <div class="text-center lg:text-left">
+            <div class="fade-up inline-flex items-center space-x-2 bg-white/95 px-5 py-3 rounded-full mb-6 shadow-lg">
+              <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+              <span class="text-sm font-semibold text-gray-700">Industry Academia Collaboration</span>
+            </div>
+            
+            <h1 class="fade-up delay-100 text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+              Start Your <span class="gradient-text">Career</span> & Pursue Your <span class="gradient-text">Passion</span>
+            </h1>
+            
+            <p class="fade-up delay-200 text-lg text-white/95 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+              We help our clients succeed by creating brand identities, digital experiences, and connecting talents with opportunities.
+            </p>
+            
+            <div class="fade-up delay-300 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
+              <a href="/services" class="btn-primary">
+                View Our Programs
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </a>
+              <a href="/contact" class="btn-outline">
+                Contact Us
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Content - Hero Image -->
+          <div class="fade-right delay-200 relative hidden lg:block">
+            <div class="relative animate-float">
+              <div class="absolute -inset-4 bg-gradient-to-r from-orange-500/20 to-blue-500/20 rounded-3xl blur-3xl"></div>
+              <div class="relative overflow-hidden rounded-3xl shadow-2xl border-4 border-white/30">
+                <Image src={heroImage} alt="TTPOA Students" class="w-full h-[500px] object-cover" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section with Glassmorphism -->
+    <section class="py-12 md:py-16">
+      <div class="max-w-6xl mx-auto px-3 sm:px-4">
+        <div class="text-center mb-12">
+          <h2 class="fade-up text-3xl md:text-4xl font-bold text-white mb-4">Our Impact in Numbers</h2>
+          <p class="fade-up delay-100 text-white/90 max-w-2xl mx-auto">Connecting thousands across Telangana State</p>
+        </div>
+        
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          <div class="fade-up delay-100 stats-card-glass text-center group">
+            <div class="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-600/20 flex items-center justify-center backdrop-blur-sm border border-white/30 group-hover:scale-110 transition-transform duration-500">
+              <svg class="w-8 h-8 md:w-10 md:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+              </svg>
+            </div>
+            <span class="block text-3xl md:text-4xl font-extrabold text-white mb-2 counter" data-target="100000">0</span>
+            <p class="text-xs md:text-sm text-white/80 uppercase tracking-wide font-semibold">Subscriptions</p>
+          </div>
+          
+          <div class="fade-up delay-200 stats-card-glass text-center group">
+            <div class="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-600/20 flex items-center justify-center backdrop-blur-sm border border-white/30 group-hover:scale-110 transition-transform duration-500">
+              <svg class="w-8 h-8 md:w-10 md:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+              </svg>
+            </div>
+            <span class="block text-3xl md:text-4xl font-extrabold text-white mb-2 counter" data-target="500">0</span>
+            <p class="text-xs md:text-sm text-white/80 uppercase tracking-wide font-semibold">Colleges</p>
+          </div>
+          
+          <div class="fade-up delay-300 stats-card-glass text-center group">
+            <div class="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-orange-500/20 to-orange-600/20 flex items-center justify-center backdrop-blur-sm border border-white/30 group-hover:scale-110 transition-transform duration-500">
+              <svg class="w-8 h-8 md:w-10 md:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <span class="block text-3xl md:text-4xl font-extrabold text-white mb-2 counter" data-target="200">0</span>
+            <p class="text-xs md:text-sm text-white/80 uppercase tracking-wide font-semibold">Companies</p>
+          </div>
+          
+          <div class="fade-up delay-400 stats-card-glass text-center group">
+            <div class="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-green-500/20 to-green-600/20 flex items-center justify-center backdrop-blur-sm border border-white/30 group-hover:scale-110 transition-transform duration-500">
+              <svg class="w-8 h-8 md:w-10 md:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+              </svg>
+            </div>
+            <span class="block text-3xl md:text-4xl font-extrabold text-white mb-2 counter" data-target="10000">0</span>
+            <p class="text-xs md:text-sm text-white/80 uppercase tracking-wide font-semibold">Placements</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Navigation Section -->
+    <section class="section-padding">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="fade-up text-3xl md:text-4xl font-bold text-white mb-4">Quick Access Portals</h2>
+          <p class="fade-up delay-100 text-white/95 max-w-2xl mx-auto">Choose your portal to get started</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Student Cell -->
+          <a href="https://ttpoa.org.in/index.php/Login/index" class="fade-up delay-100 service-card group text-center hover:scale-105 transition-transform">
+            <div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center group-hover:from-blue-600 group-hover:to-blue-700 transition-all shadow-lg">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">Student Cell</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Access career guidance, job listings, and placement opportunities</p>
+          </a>
+
+          <!-- TPO Cell -->
+          <a href="https://ttpoa.org.in/index.php/Tpo_auth/login" class="fade-up delay-200 service-card group text-center hover:scale-105 transition-transform">
+            <div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center group-hover:from-purple-600 group-hover:to-purple-700 transition-all shadow-lg">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-purple-600 transition-colors">TPO Cell</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Manage placement activities and connect with organizations</p>
+          </a>
+
+          <!-- Organization Cell -->
+          <a href="https://ttpoa.org.in/index.php/Company_auth/login" class="fade-up delay-300 service-card group text-center hover:scale-105 transition-transform">
+            <div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center group-hover:from-orange-600 group-hover:to-orange-700 transition-all shadow-lg">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-orange-600 transition-colors">Organization Cell</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Post jobs, browse candidates, and conduct recruitment drives</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-12 md:py-20 bg-white/5 backdrop-blur-sm">
+      <div class="max-w-6xl mx-auto px-3 sm:px-4">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Image Grid -->
+          <div class="fade-left grid grid-cols-2 gap-4">
+            <div class="space-y-4">
+              <div class="rounded-2xl overflow-hidden shadow-2xl border-2 border-white/30 hover:border-orange-400/50 transition-all duration-300">
+                <Image src={image2} alt="TTPOA Event" class="w-full h-48 object-cover hover:scale-110 transition-transform duration-500" />
+              </div>
+              <div class="rounded-2xl overflow-hidden shadow-2xl border-2 border-white/30 hover:border-blue-400/50 transition-all duration-300">
+                <Image src={image3} alt="TTPOA Workshop" class="w-full h-64 object-cover hover:scale-110 transition-transform duration-500" />
+              </div>
+            </div>
+            <div class="pt-8">
+              <div class="rounded-2xl overflow-hidden shadow-2xl border-2 border-white/30 hover:border-purple-400/50 transition-all duration-300 animate-float">
+                <Image src={heroImage} alt="TTPOA Training" class="w-full h-80 object-cover hover:scale-110 transition-transform duration-500" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="fade-right">
+            <div class="inline-flex items-center bg-gradient-to-r from-blue-500/20 to-orange-500/20 backdrop-blur-md px-6 py-3 rounded-full text-sm font-bold mb-6 text-white border border-white/30 shadow-lg">
+              <svg class="w-4 h-4 mr-2 text-orange-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              Upcoming Programs
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">Our <span class="gradient-text">Achievements</span></h2>
+            <p class="text-white/95 mb-8 leading-relaxed text-base md:text-lg">
+              Top instructors from around the world teaching and guiding students towards successful careers. We provide comprehensive placement support and industry connections.
+            </p>
+            
+            <div class="space-y-5 mb-10">
+              <div class="flex items-center space-x-4 bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/15 transition-all">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-lg flex-shrink-0">
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <span class="text-white font-semibold text-base">Industry-Academia Collaboration</span>
+              </div>
+              <div class="flex items-center space-x-4 bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/15 transition-all">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-lg flex-shrink-0">
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <span class="text-white font-semibold text-base">Comprehensive Placement Support</span>
+              </div>
+              <div class="flex items-center space-x-4 bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/15 transition-all">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-lg flex-shrink-0">
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <span class="text-white font-semibold text-base">Skill Development Programs</span>
+              </div>
+            </div>
+
+            <a href="/services" class="btn-primary inline-flex">
+              Explore Programs
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+              </div>
+            </div>
+            <div class="pt-8">
+              <div class="rounded-2xl overflow-hidden shadow-2xl glass-card border-2 border-white/20 animate-float">
+                <Image src={heroImage} alt="TTPOA Training" class="w-full h-80 object-cover" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="fade-right">
+            <span class="inline-block glass px-4 py-2 rounded-full text-sm font-medium mb-4 text-white drop-shadow-lg">
+              Upcoming Programs
+            </span>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 drop-shadow-2xl">Our Achievements</h2>
+            <p class="text-white/90 mb-8 leading-relaxed drop-shadow-lg">
+              Top instructors from around the world teaching and guiding students towards successful careers. We provide comprehensive placement support and industry connections.
+            </p>
+            
+            <div class="space-y-4 mb-8">
+              <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-lg glass-strong flex items-center justify-center backdrop-blur-md">
+                  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <span class="text-white font-medium drop-shadow-lg">Industry-Academia Collaboration</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-lg glass-strong flex items-center justify-center backdrop-blur-md">
+                  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <span class="text-white font-medium drop-shadow-lg">Comprehensive Placement Support</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-lg glass-strong flex items-center justify-center backdrop-blur-md">
+                  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <span class="text-white font-medium drop-shadow-lg">Skill Development Programs</span>
+              </div>
+            </div>
+
+            <a href="/services" class="btn-primary">
+              Explore Programs
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Placed Students / Success Stories -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
+          <span class="bg-gradient-to-r from-blue-600 to-orange-500 bg-clip-text text-transparent">Placed Students</span>
+        </h2>
+        <p class="text-gray-600 text-center">Celebrating our successful placements</p>
+      </div>
+      
+      <div class="relative overflow-hidden">
+        <div class="flex animate-ticker space-x-8">
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((i) => (
+            <div class="flex-shrink-0 w-36 h-36 rounded-full flex items-center justify-center overflow-hidden border-4 border-gradient-to-br from-blue-500 to-orange-500 shadow-xl hover:scale-110 transition-transform">
+              <img src={`https://ui-avatars.com/api/?name=Student+${i}&background=random&color=fff&size=144`} alt={`Student ${i}`} class="w-full h-full object-cover" />
+            </div>
+          ))}
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((i) => (
+            <div class="flex-shrink-0 w-36 h-36 rounded-full flex items-center justify-center overflow-hidden border-4 border-gradient-to-br from-blue-500 to-orange-500 shadow-xl hover:scale-110 transition-transform">
+              <img src={`https://ui-avatars.com/api/?name=Student+${i}&background=random&color=fff&size=144`} alt={`Student ${i}`} class="w-full h-full object-cover" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section-padding">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="bg-gradient-to-br from-blue-600 via-blue-700 to-purple-700 rounded-3xl p-12 shadow-2xl relative overflow-hidden">
+          <!-- Decorative elements -->
+          <div class="absolute top-0 right-0 w-64 h-64 bg-orange-500/20 rounded-full blur-3xl"></div>
+          <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl"></div>
+          
+          <div class="relative z-10">
+            <h2 class="fade-up text-3xl md:text-4xl font-bold mb-6 text-white">Ready to Start Your Career Journey?</h2>
+            <p class="fade-up delay-100 text-white/95 text-lg mb-8 max-w-2xl mx-auto">
+              Join thousands of students who have found their dream careers through TTPOA's comprehensive placement services.
+            </p>
+            <div class="fade-up delay-200 flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="https://ttpoa.org.in/index.php/Login/index" class="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl hover:scale-105">
+                Get Started
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </a>
+              <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm hover:scale-105">
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
