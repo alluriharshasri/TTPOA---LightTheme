@@ -60,10 +60,10 @@ const teamMembers = [
           <span class="fade-up inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
             Our Team
           </span>
-          <h1 class="fade-up delay-100 text-4xl md:text-5xl font-bold text-white mb-6">
+          <h1 class="fade-up delay-100 text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Association <span class="gradient-text">Members</span>
           </h1>
-          <p class="fade-up delay-200 text-lg text-white/90 leading-relaxed">
+          <p class="fade-up delay-200 text-lg text-gray-800 leading-relaxed">
             Meet the dedicated professionals driving TTPOA's mission to bridge the gap between academia and industry.
           </p>
         </div>
@@ -77,7 +77,7 @@ const teamMembers = [
           <span class="fade-up inline-block bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
             Leadership
           </span>
-          <h2 class="fade-up delay-100 text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 class="fade-up delay-100 text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Executive Committee
           </h2>
         </div>
@@ -104,25 +104,38 @@ const teamMembers = [
           <span class="fade-up inline-block bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
             Our Network
           </span>
-          <h2 class="fade-up delay-100 text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 class="fade-up delay-100 text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Member Institutions
           </h2>
-          <p class="fade-up delay-200 text-white/90 max-w-2xl mx-auto">
+          <p class="fade-up delay-200 text-gray-800 max-w-2xl mx-auto">
             TTPOA represents over 500+ colleges and universities across Telangana State
           </p>
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {['Engineering Colleges', 'Polytechnics', 'Universities', 'Degree Colleges', 'MBA Institutes', 'MCA Institutes', 'Pharmacy Colleges', 'Other Institutions'].map((item, index) => (
-            <div class={`fade-up delay-${(index % 4 + 1) * 100} bg-white rounded-2xl p-6 text-center border border-slate-100 hover:border-blue-200 hover:shadow-lg transition-all`}>
-              <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-blue-50 flex items-center justify-center">
-                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                </svg>
+          {['Engineering Colleges', 'Polytechnics', 'Universities', 'Degree Colleges', 'MBA Institutes', 'MCA Institutes', 'Pharmacy Colleges', 'Other Institutions'].map((item, index) => {
+            const colors = [
+              { bg: 'bg-gradient-to-br from-orange-100 to-pink-100', icon: 'from-orange-500 to-pink-500', text: 'text-orange-700' },
+              { bg: 'bg-gradient-to-br from-pink-100 to-rose-100', icon: 'from-pink-500 to-rose-500', text: 'text-pink-700' },
+              { bg: 'bg-gradient-to-br from-rose-100 to-orange-100', icon: 'from-rose-500 to-orange-500', text: 'text-rose-700' },
+              { bg: 'bg-gradient-to-br from-orange-100 to-amber-100', icon: 'from-orange-500 to-amber-500', text: 'text-orange-700' },
+              { bg: 'bg-gradient-to-br from-pink-100 to-fuchsia-100', icon: 'from-pink-500 to-fuchsia-500', text: 'text-pink-700' },
+              { bg: 'bg-gradient-to-br from-fuchsia-100 to-pink-100', icon: 'from-fuchsia-500 to-pink-500', text: 'text-fuchsia-700' },
+              { bg: 'bg-gradient-to-br from-rose-100 to-pink-100', icon: 'from-rose-500 to-pink-500', text: 'text-rose-700' },
+              { bg: 'bg-gradient-to-br from-orange-100 to-red-100', icon: 'from-orange-500 to-red-500', text: 'text-orange-700' }
+            ];
+            const color = colors[index];
+            return (
+              <div class={`fade-up delay-${(index % 4 + 1) * 100} ${color.bg} backdrop-blur-sm rounded-2xl p-6 text-center border border-orange-200/50 hover:border-pink-300/70 hover:shadow-lg transition-all`}>
+                <div class={`w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br ${color.icon} flex items-center justify-center shadow-md`}>
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                  </svg>
+                </div>
+                <h3 class={`font-semibold ${color.text}`}>{item}</h3>
               </div>
-              <h3 class="font-semibold text-slate-900">{item}</h3>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
@@ -131,21 +144,21 @@ const teamMembers = [
     <section class="section-padding">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid md:grid-cols-4 gap-8 text-center">
-          <div class="fade-up delay-100 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-2xl p-8 shadow-xl hover:bg-white/15 transition-all">
-            <div class="text-4xl font-bold mb-2 counter" data-target="500">0</div>
-            <p class="text-white/90 font-semibold">Member Colleges</p>
+          <div class="fade-up delay-100 bg-gradient-to-br from-orange-100/80 to-pink-100/80 backdrop-blur-md border border-orange-300/50 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all">
+            <div class="text-4xl font-bold mb-2 text-orange-700 counter" data-target="500">0</div>
+            <p class="text-gray-800 font-semibold">Member Colleges</p>
           </div>
-          <div class="fade-up delay-200 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-2xl p-8 shadow-xl hover:bg-white/15 transition-all">
-            <div class="text-4xl font-bold mb-2 counter" data-target="200">0</div>
-            <p class="text-white/90 font-semibold">Partner Companies</p>
+          <div class="fade-up delay-200 bg-gradient-to-br from-pink-100/80 to-rose-100/80 backdrop-blur-md border border-pink-300/50 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all">
+            <div class="text-4xl font-bold mb-2 text-pink-700 counter" data-target="200">0</div>
+            <p class="text-gray-800 font-semibold">Partner Companies</p>
           </div>
-          <div class="fade-up delay-300 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-2xl p-8 shadow-xl hover:bg-white/15 transition-all">
-            <div class="text-4xl font-bold mb-2 counter" data-target="1000">0</div>
-            <p class="text-white/90 font-semibold">Active TPOs</p>
+          <div class="fade-up delay-300 bg-gradient-to-br from-rose-100/80 to-orange-100/80 backdrop-blur-md border border-rose-300/50 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all">
+            <div class="text-4xl font-bold mb-2 text-rose-700 counter" data-target="1000">0</div>
+            <p class="text-gray-800 font-semibold">Active TPOs</p>
           </div>
-          <div class="fade-up delay-400 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-2xl p-8 shadow-xl hover:bg-white/15 transition-all">
-            <div class="text-4xl font-bold mb-2 counter" data-target="10">0</div>
-            <p class="text-white/90 font-semibold">Years of Service</p>
+          <div class="fade-up delay-400 bg-gradient-to-br from-orange-100/80 to-amber-100/80 backdrop-blur-md border border-orange-300/50 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all">
+            <div class="text-4xl font-bold mb-2 text-orange-700 counter" data-target="10">0</div>
+            <p class="text-gray-800 font-semibold">Years of Service</p>
           </div>
         </div>
       </div>
