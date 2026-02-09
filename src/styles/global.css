@@ -18,6 +18,17 @@
     overflow-x: hidden;
     color: #1e293b;
     position: relative;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  main {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  section {
+    width: 100%;
   }
 }
 
@@ -440,20 +451,21 @@
   /* Professional styles already defined above */
 }
 
-/* Section Styles */
+/* Section Styles - Full Width Responsive */
 .section-padding {
-  padding: 3rem 0.75rem;
+  padding: 3rem 0;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
   .section-padding {
-    padding: 4rem 1rem;
+    padding: 4rem 0;
   }
 }
 
 @media (min-width: 1024px) {
   .section-padding {
-    padding: 5rem 1.5rem;
+    padding: 5rem 0;
   }
 }
 
@@ -575,4 +587,40 @@ input, textarea, select {
 
 .pulse-glow {
   animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Responsive Utilities */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+.w-full {
+  width: 100% !important;
+}
+
+/* Grid Responsive Adjustments */
+@media (max-width: 767px) {
+  .grid {
+    gap: 1rem !important;
+  }
+  
+  .rounded-3xl {
+    border-radius: 1.5rem !important;
+  }
+  
+  .p-12 {
+    padding: 2rem !important;
+  }
+}
+
+/* Prevent horizontal scroll */
+* {
+  max-width: 100%;
+}
+
+html, body {
+  overflow-x: hidden !important;
+  width: 100%;
+  position: relative;
 }
