@@ -73,13 +73,13 @@
   }
 }
 
-/* Professional Glass Effect - Minimal Use */
+/* Professional Glass Effect - Enhanced Glassmorphism */
 .glass-nav {
-  background: rgba(30, 58, 138, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(59, 130, 246, 0.3);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .glass-card {
@@ -98,13 +98,13 @@
 
 /* Stats Card with Glassmorphism */
 .stats-card-glass {
-  background: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, rgba(227, 240, 252, 0.4) 0%, rgba(199, 224, 247, 0.35) 100%);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(227, 240, 252, 0.6);
   border-radius: 1.5rem;
   padding: 2rem 1.5rem;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 40px rgba(59, 130, 246, 0.2);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
@@ -128,18 +128,18 @@
 
 .stats-card-glass:hover {
   transform: translateY(-12px) scale(1.05);
-  border-color: rgba(255, 255, 255, 0.5);
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 20px 60px rgba(59, 130, 246, 0.3), 0 0 40px rgba(249, 115, 22, 0.2);
+  border-color: rgba(147, 197, 253, 0.8);
+  background: linear-gradient(135deg, rgba(199, 224, 247, 0.5) 0%, rgba(227, 240, 252, 0.45) 100%);
+  box-shadow: 0 20px 60px rgba(59, 130, 246, 0.35), 0 0 40px rgba(147, 197, 253, 0.25);
 }
 
 /* Stats Card with Professional Styling */
 .stats-card {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
-  border: 2px solid rgba(59, 130, 246, 0.2);
+  border: 2px solid rgba(227, 240, 252, 0.5);
   border-radius: 1.5rem;
   padding: 2rem;
-  box-shadow: 0 12px 40px rgba(30, 58, 138, 0.15);
+  box-shadow: 0 12px 40px rgba(227, 240, 252, 0.25);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -174,8 +174,8 @@
 }
 
 .btn-secondary {
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-  color: white;
+  background: linear-gradient(135deg, #e3f0fc 0%, #c7e0f7 100%);
+  color: #1e293b;
   padding: 1rem 2.5rem;
   border-radius: 0.75rem;
   font-weight: 600;
@@ -186,18 +186,18 @@
   gap: 0.75rem;
   text-decoration: none;
   cursor: pointer;
-  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 8px 24px rgba(227, 240, 252, 0.4);
 }
 
 .btn-secondary:hover {
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  background: linear-gradient(135deg, #c7e0f7 0%, #abd1f2 100%);
   transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 12px 32px rgba(227, 240, 252, 0.5);
 }
 
 .btn-outline {
   background: transparent;
-  color: white;
+  color: #1f2937;
   padding: 1rem 2.5rem;
   border-radius: 0.75rem;
   font-weight: 600;
@@ -207,15 +207,15 @@
   justify-content: center;
   gap: 0.75rem;
   text-decoration: none;
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(31, 41, 55, 0.4);
   cursor: pointer;
 }
 
 .btn-outline:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: white;
+  background: rgba(31, 41, 55, 0.1);
+  border-color: #1f2937;
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px rgba(31, 41, 55, 0.15);
 }
 
 /* Gradient Text */
@@ -244,7 +244,7 @@
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, #3b82f6, #f97316);
+  background: linear-gradient(90deg, #e3f0fc, #f97316);
   transform: scaleX(0);
   transition: transform 0.4s ease;
 }
@@ -255,7 +255,7 @@
 
 .partner-card:hover {
   transform: translateY(-20px) scale(1.02);
-  box-shadow: 0 24px 60px rgba(59, 130, 246, 0.25);
+  box-shadow: 0 24px 60px rgba(227, 240, 252, 0.35);
   animation: floatOrbs 6s ease-in-out infinite;
 }
 
@@ -267,7 +267,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 1rem;
-  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  background: linear-gradient(135deg, #f5f9fd 0%, #e3f0fc 100%);
   padding: 1.5rem;
   transition: all 0.3s ease;
 }
@@ -280,7 +280,7 @@
 .partner-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #1e40af;
+  color: #6b9bd1;
   text-align: center;
   margin-bottom: 0.5rem;
 }
@@ -288,7 +288,7 @@
 .partner-count {
   font-size: 3rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #3b82f6 0%, #f97316 100%);
+  background: linear-gradient(135deg, #e3f0fc 0%, #f97316 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -395,7 +395,7 @@
 
 /* Professional Footer Styles */
 .footer-bg {
-  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
+  background: linear-gradient(135deg, #e3f0fc 0%, #d4e8fa 50%, #c7e0f7 100%);
   position: relative;
   overflow: hidden;
 }
@@ -411,13 +411,13 @@
 }
 
 .footer-link {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(55, 65, 81, 0.9);
   transition: all 0.3s ease;
   display: inline-block;
 }
 
 .footer-link:hover {
-  color: white;
+  color: #1f2937;
   transform: translateX(5px);
 }
 
@@ -428,10 +428,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(107, 114, 128, 0.15);
+  border: 1px solid rgba(107, 114, 128, 0.3);
   transition: all 0.3s ease;
-  color: white;
+  color: #374151;
 }
 
 .social-icon:hover {
@@ -499,8 +499,8 @@ input, textarea, select {
 
 .form-input:focus {
   outline: none;
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  border-color: #e3f0fc;
+  box-shadow: 0 0 0 3px rgba(227, 240, 252, 0.3);
 }
 
 /* Service Cards */
@@ -522,7 +522,7 @@ input, textarea, select {
   left: -2px;
   right: -2px;
   bottom: -2px;
-  background: linear-gradient(135deg, #3b82f6, #f97316);
+  background: linear-gradient(135deg, #e3f0fc, #f97316);
   border-radius: 1.5rem;
   opacity: 0;
   transition: opacity 0.4s ease;

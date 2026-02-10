@@ -10,9 +10,9 @@ const news = [
 ];
 ---
 
-<div class="news-ticker-wrapper bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 border-b-2 border-orange-400 shadow-lg">
+<div class="news-ticker-wrapper bg-gradient-to-r from-blue-50 via-blue-100 to-blue-50 border-b-2 border-orange-300 shadow-lg">
   <div class="max-w-7xl mx-auto flex items-center">
-    <div class="ticker-label bg-orange-500 text-white px-6 py-3 font-bold text-sm uppercase tracking-wide flex items-center gap-2 shadow-lg">
+    <div class="ticker-label bg-gradient-to-r from-orange-100 to-orange-200 text-orange-800 px-6 py-3 font-bold text-sm uppercase tracking-wide flex items-center gap-2 shadow-md border-r-2 border-orange-300">
       <svg class="w-4 h-4 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
         <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/>
       </svg>
@@ -21,12 +21,12 @@ const news = [
     <div class="ticker-content flex-1 overflow-hidden py-3">
       <div class="ticker-scroll flex gap-12 animate-ticker">
         {news.map((item) => (
-          <a href={item.link} class="text-white hover:text-orange-300 text-sm font-medium whitespace-nowrap flex items-center gap-2 transition-colors duration-300">
+          <a href={item.link} class="text-gray-800 hover:text-orange-600 text-sm font-semibold whitespace-nowrap flex items-center gap-2 transition-colors duration-300">
             {item.text}
           </a>
         ))}
         {news.map((item) => (
-          <a href={item.link} class="text-white hover:text-orange-300 text-sm font-medium whitespace-nowrap flex items-center gap-2 transition-colors duration-300">
+          <a href={item.link} class="text-gray-800 hover:text-orange-600 text-sm font-semibold whitespace-nowrap flex items-center gap-2 transition-colors duration-300">
             {item.text}
           </a>
         ))}
