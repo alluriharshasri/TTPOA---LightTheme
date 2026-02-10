@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://alluriharshasri.github.io',
-  base: '/TTPOA',
+  base: '/TTPOA---LightTheme',
   devToolbar: {
     enabled: false
   },
